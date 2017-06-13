@@ -5,7 +5,7 @@ if(!require(tidyverse)){
 
 ####Data Input####
 #cd into the folder that contains the 'autoantibodies.csv' folder
-path<-paste0(getwd(), "/Tulane/Research/Navvy\ project/")
+#path<-paste0(getwd(), "/Tulane/Research/Navvy\ project/")
 #setwd(path)
 #data for prevalence
 aaData<-read.csv(file = 'autoantibodies.csv')
@@ -26,3 +26,18 @@ prevTMA<-sum(na.omit(aaData$TMA))/dim(aaData)[1]
 prevtTG<-sum(na.omit(aaData$tTG))/dim(aaData)[1]
 #prevalence of ZnT8
 prevZnT8<-sum(na.omit(aaData$ZnT8))/dim(aaData)[1]
+
+####Regression analysis####
+###effect of Age of onset on each autoantibody###
+#GAD65
+ageGAD65<-lm(Age_onset~GAD_65, data = aaData)
+#IAA
+ageIAA<-lm(Age_onset~IAA, data = aaData)
+#IA_2
+ageIA_2<-lm(Age_onset~IA_2, data = aaData)
+#TMA
+ageTMA<-lm(Age_onset~TMA, data = aaData)
+#tTG
+agetTG<-lm(Age_onset~tTG, data = aaData)
+#ZnT8
+ageZnT8<-lm(Age_onset~ZnT8, data = aaData)
