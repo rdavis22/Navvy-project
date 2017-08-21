@@ -2,18 +2,34 @@
 ###Load the required libraries###
 if(!require(tidyverse)){
   install.packages("tidyverse"); library(tidyverse)}
+if(!require(RVAideMemoire)){
+  install.packages("RVAideMemoire"); library(RVAideMemoire)}
+if(!require(car)){
+  install.packages("car"); library(car)}
 
 ####Data Input####
 #cd into the folder that contains the 'autoantibodies.csv' folder
-#setwd("/Users/Rick/Documents/Tulane/Research/Navvy\ project/")
-##data
+if (getwd()!="C:/Users/Rick/Documents/Tulane/Research/Navvy project"){
+  setwd("/Users/Rick/Documents/Tulane/Research/Navvy\ project/") 
+}
+###data###
 aaData<-read.csv(file = 'autoantibodies.csv')
-
+#recode the 'Sex' Factor
+aaData$Sex<-recode(aaData$Sex, "c('F', 'F ')='F';c('M', 'M ', '') = 'M'")
+attach(aaData)
 
 ####Descriptive Statistics####
+
 ###Prevelance of antibodies###
-# #prevalence of GAD_65
-# prevGAD65<-sum(na.omit(aaData$GAD_65))/dim(aaData)[1]
+##prevalence of GAD_65
+#all patients
+prevGAD65all<-sum(na.omit(GAD_65))/dim(aaData)[1]
+#male patients
+prevGAD65male<-sum(na.omit(GAD_65[Sex=="M"]))/dim(aaData)[1]
+#female patients
+prevGAD65female<-sum(na.omit(GAD_65[Sex=="F"]))/dim(aaData)[1]
+#patients less than 10
+prevGAD65less10<-sum(na.omit(GAD_65[Age<10]))/dim(aaData)[1]
 # #prevalence of IAA
 # prevIAA<-sum(na.omit(aaData$IAA))/dim(aaData)[1]
 # #prevalence of IA_2
