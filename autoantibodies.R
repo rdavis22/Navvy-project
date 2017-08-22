@@ -30,17 +30,70 @@ prevGAD65male<-sum(na.omit(GAD_65[Sex=="M"]))/dim(aaData)[1]
 prevGAD65female<-sum(na.omit(GAD_65[Sex=="F"]))/dim(aaData)[1]
 #patients less than 10
 prevGAD65less10<-sum(na.omit(GAD_65[Age<10]))/dim(aaData)[1]
-# #prevalence of IAA
-# prevIAA<-sum(na.omit(aaData$IAA))/dim(aaData)[1]
-# #prevalence of IA_2
-# prevIA_2<-sum(na.omit(aaData$IA_2))/dim(aaData)[1]
-# #prevalence of TMA
-# prevTMA<-sum(na.omit(aaData$TMA))/dim(aaData)[1]
-# #prevalence of tTG
-# prevtTG<-sum(na.omit(aaData$tTG))/dim(aaData)[1]
-# #prevalence of ZnT8
-# prevZnT8<-sum(na.omit(aaData$ZnT8))/dim(aaData)[1]
-# 
+#patients greater than 10
+prevGAD65great10<-sum(na.omit(GAD_65[Age>10]))/dim(aaData)[1]
+
+##prevalence of IAA
+#all patients
+prevIAAall<-sum(na.omit(IAA))/dim(aaData)[1]
+#male patients
+prevIAAmale<-sum(na.omit(IAA[Sex=="M"]))/dim(aaData)[1]
+#female patients
+prevIAAfemale<-sum(na.omit(IAA[Sex=="F"]))/dim(aaData)[1]
+#patients less than 10
+prevIAAless10<-sum(na.omit(IAA[Age<10]))/dim(aaData)[1]
+#patients greater than 10
+prevIAAgreat10<-sum(na.omit(IAA[Age>10]))/dim(aaData)[1]
+
+##prevalence of IA_2
+#all patients
+prevIA_2Aall<-sum(na.omit(IA_2))/dim(aaData)[1]
+#male patients
+prevIA_2male<-sum(na.omit(IA_2[Sex=="M"]))/dim(aaData)[1]
+#female patients
+prevIA_2female<-sum(na.omit(IA_2[Sex=="F"]))/dim(aaData)[1]
+#patients less than 10
+prevIA_2less10<-sum(na.omit(IA_2[Age<10]))/dim(aaData)[1]
+#patients greater than 10
+prevIA_2great10<-sum(na.omit(IA_2[Age>10]))/dim(aaData)[1]
+
+##prevalence of TMA
+#all patients
+prevTMAall<-sum(na.omit(TMA))/dim(aaData)[1]
+#male patients
+prevTMAmale<-sum(na.omit(TMA[Sex=="M"]))/dim(aaData)[1]
+#female patients
+prevTMAfemale<-sum(na.omit(TMA[Sex=="F"]))/dim(aaData)[1]
+#patients less than 10
+prevTMAless10<-sum(na.omit(TMA[Age<10]))/dim(aaData)[1]
+#patients greater than 10
+prevTMAgreat10<-sum(na.omit(TMA[Age>10]))/dim(aaData)[1]
+
+##prevalence of tTG
+#all patients
+prevtTGall<-sum(na.omit(tTG))/dim(aaData)[1]
+#male patients
+prevtTGmale<-sum(na.omit(tTG[Sex=="M"]))/dim(aaData)[1]
+#female patients
+prevtTGfemale<-sum(na.omit(tTG[Sex=="F"]))/dim(aaData)[1]
+#patients less than 10
+prevtTGless10<-sum(na.omit(tTG[Age<10]))/dim(aaData)[1]
+#patients greater than 10
+prevtTGgreat10<-sum(na.omit(tTG[Age>10]))/dim(aaData)[1]
+
+##prevalence of ZnT8
+#all patients
+prevZnT8all<-sum(na.omit(ZnT8))/dim(aaData)[1]
+#male patients
+prevZnT8male<-sum(na.omit(ZnT8[Sex=="M"]))/dim(aaData)[1]
+#female patients
+prevZnT8female<-sum(na.omit(ZnT8[Sex=="F"]))/dim(aaData)[1]
+#patients less than 10
+prevZnT8less10<-sum(na.omit(ZnT8[Age<10]))/dim(aaData)[1]
+#patients greater than 10
+prevZnT8great10<-sum(na.omit(ZnT8[Age>10]))/dim(aaData)[1]
+
+
 # ####Regression analysis####
 # ###effect of Age of onset on each autoantibody###
 # #GAD65
