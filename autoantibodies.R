@@ -10,7 +10,7 @@ if(!require(car)){
 ####Data Input####
 #cd into the folder that contains the 'autoantibodies.csv' folder
 if (getwd()!="C:/Users/Rick/Documents/Tulane/Research/Navvy project"){
-  setwd("/Users/Rick/Documents/Tulane/Research/Navvy\ project/") 
+  setwd("C:/Users/Rick/Documents/Tulane/Research/Navvy\ project/") 
 }
 ###data###
 aaData<-read.csv(file = 'autoantibodies.csv')
@@ -23,15 +23,15 @@ attach(aaData)
 ###Prevelance of antibodies###
 ##prevalence of GAD_65
 #all patients
-prevGAD65all<-sum(na.omit(GAD_65))/dim(aaData)[1]
+prevGAD65all<-sum(GAD_65)/dim(aaData)[1]
 #male patients
-prevGAD65male<-sum(na.omit(GAD_65[Sex=="M"]))/dim(aaData)[1]
+prevGAD65male<-sum(GAD_65[Sex=="M"])/dim(aaData)[1]
 #female patients
-prevGAD65female<-sum(na.omit(GAD_65[Sex=="F"]))/dim(aaData)[1]
+prevGAD65female<-sum(GAD_65[Sex=="F"])/dim(aaData)[1]
 #patients less than 10
-prevGAD65less10<-sum(na.omit(GAD_65[Age<10]))/dim(aaData)[1]
+prevGAD65less10<-sum(GAD_65[Age<10])/dim(aaData)[1]
 #patients greater than 10
-prevGAD65great10<-sum(na.omit(GAD_65[Age>10]))/dim(aaData)[1]
+prevGAD65great10<-sum(GAD_65[Age>10])/dim(aaData)[1]
 
 ##prevalence of IAA
 #all patients
@@ -93,6 +93,8 @@ prevZnT8less10<-sum(na.omit(ZnT8[Age<10]))/dim(aaData)[1]
 #patients greater than 10
 prevZnT8great10<-sum(na.omit(ZnT8[Age>10]))/dim(aaData)[1]
 
+###Prevalence of Demographics###
+##New-Onset (NO)##
 
 # ####Regression analysis####
 # ###effect of Age of onset on each autoantibody###
